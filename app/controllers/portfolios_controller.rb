@@ -3,6 +3,11 @@ class PortfoliosController < ApplicationController
     @items = Portfolio.all
    end
 
+  def show
+    @item = Portfolio.find(params[:id])
+    end
+
+
    def new
    @item = Portfolio.new
    end
@@ -29,6 +34,17 @@ class PortfoliosController < ApplicationController
     flash[:notice] = "Successfully updated..."
        else
     render 'edit'
+     end
+   end
+
+   def destroy
+     @item = Portfolio.find(params[:id])
+     if @item.destroy
+       redirect_to portfolios_path
+       flash[:notice] = "Successfully deleted..."
+     else
+       redirect_to portfolios_path
+         flash[:notice] = "Please retry..."
      end
    end
 

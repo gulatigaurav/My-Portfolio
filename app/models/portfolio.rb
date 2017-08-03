@@ -4,4 +4,12 @@ validates_presence_of :title, :body, :main_image, :thumb_image
   where(subtitle: "Angular")
   end
   scope :ruby_on_rails, -> {where(subtitle: "Ruby on Rails")}
+
+  after_initialize :set_defaults
+ # all your model logic in model file
+   def set_defaults
+      self.main_image ||= "http://via.placeholder.com/600x400"
+      self.thumb_image ||= "http://via.placeholder.com/350x150"
+   end
+
 end

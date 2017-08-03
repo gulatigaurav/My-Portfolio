@@ -1,0 +1,10 @@
+<h1>  Welcome to Portfolio's Angular Items </h1>
+
+<%= link_to "Create New Item", new_portfolio_path %>
+
+<% @angular.each do |item| %>
+  <p><%=  link_to item.title, portfolio_display_path(item) %></p>
+   <%= link_to "Show", portfolio_display_path(item) %>
+   <%= link_to "Edit", edit_portfolio_path(item) %>
+   <%= link_to "Delete", portfolio_path(item), method: :delete %>
+<% end %>

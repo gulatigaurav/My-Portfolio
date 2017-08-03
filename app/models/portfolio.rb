@@ -1,4 +1,5 @@
 class Portfolio < ApplicationRecord
+   includes Placeholder
 validates_presence_of :title, :body, :main_image, :thumb_image
   def self.angular
   where(subtitle: "Angular")
@@ -8,8 +9,9 @@ validates_presence_of :title, :body, :main_image, :thumb_image
   after_initialize :set_defaults
  # all your model logic in model file
    def set_defaults
-      self.main_image ||= "http://via.placeholder.com/600x400"
-      self.thumb_image ||= "http://via.placeholder.com/350x150"
-   end
+     self.main_image ||= Placeholder.image_generator(height: '600',width: '450')
+    self.thumb_image ||= Placeholder.image_generator(height: '300',width: '150')
+
+    end
 
 end

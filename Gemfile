@@ -47,4 +47,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'friendly_id', '~> 5.2', '>= 5.2.1'
+gem 'devise', '~> 4.3'
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'# gem 'bcrypt', '~> 3.1.7'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

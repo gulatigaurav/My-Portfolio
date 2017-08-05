@@ -1,19 +1,20 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-
    include DeviseWhitelist  # concerns in rails while using name as an additional controller
    include SetSource
    include CurrentUserConcern
-  # def current_user
-  #   super || OpenStruct.new( name: "Guest User",
-  #                            first_name: "Guest",
-  #                            last_name: "User",
-  #                            email: "guest@example.com",
-  #                           #  guest: true
-  #                            )
-  #   end
+   include DefaultPageBehaviour
+
 end
 
+# def current_user
+#   super || OpenStruct.new( name: "Guest User",
+#                            first_name: "Guest",
+#                            last_name: "User",
+#                            email: "guest@example.com",
+#                           #  guest: true
+#                            )
+#   end
 
 
 

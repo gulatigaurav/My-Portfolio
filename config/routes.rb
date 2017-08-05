@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users, path: '', path_names: {sign_in: 'login', sign_up: 'register'}
   resources :portfolios, except: [:show]
   get 'portfolios/:id', to: 'portfolios#show', as: 'portfolio_display' # CUSTOM ROUTES FOR resources
   root to: 'pages#home'

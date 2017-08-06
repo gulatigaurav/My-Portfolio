@@ -1,5 +1,6 @@
 class PortfoliosController < ApplicationController
   layout "portfolio"
+  before_action :set_portfolio_item, only: [:edit, :update, :show , :destroy]
    def index
     @items = Portfolio.all
    end
@@ -9,7 +10,7 @@ class PortfoliosController < ApplicationController
    end
 
   def show
-    @item = Portfolio.find(params[:id])
+    #  binding.pry
     end
 
 
@@ -30,11 +31,9 @@ class PortfoliosController < ApplicationController
    end
 
   def edit
-    @item = Portfolio.find(params[:id])
   end
 
   def update
-    @item = Portfolio.find(params[:id])
        if @item.update(portfolio_params)
     redirect_to portfolios_path
     flash[:notice] = "Successfully updated..."
@@ -44,7 +43,6 @@ class PortfoliosController < ApplicationController
    end
 
    def destroy
-     @item = Portfolio.find(params[:id])
      if @item.destroy
        redirect_to portfolios_path
        flash[:notice] = "Successfully deleted..."
@@ -60,5 +58,9 @@ class PortfoliosController < ApplicationController
        params.require(:portfolio).permit(:title, :subtitle, :body,
                        technologies_attributes: [:name])
     end
+
+     def set_portfolio_item
+       @item = Portfolio.find(params[:id])
+     end
 
 end

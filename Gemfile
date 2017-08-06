@@ -52,3 +52,4 @@ gem 'devise', '~> 4.3'
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'# gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'gaurav_footer_creater', git:'https://github.com/gulatigaurav/Footer_Creater'

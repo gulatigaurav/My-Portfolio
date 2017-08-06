@@ -15,4 +15,8 @@ module ApplicationHelper
    end
  end
 
+ def set_copyright
+    GauravFooterCreater::Renderer.copyright 'Gaurav Gulati', 'All Rights Reserved'
+ end
+
 end

@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
    include SetSource
    include CurrentUserConcern
    include DefaultPageBehaviour
-
 end
 
 # def current_user

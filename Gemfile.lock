@@ -4,6 +4,12 @@ GIT
   specs:
     bcrypt (3.1.11)
 
+GIT
+  remote: https://github.com/gulatigaurav/Footer_Creater
+  revision: 159ab79413965b772a5898d75271d36610dad472
+  specs:
+    gaurav_footer_creater (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -45,7 +51,12 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
+    autoprefixer-rails (7.1.2.3)
+      execjs
     bindex (0.5.0)
+    bootstrap (4.0.0.alpha6)
+      autoprefixer-rails (>= 6.0.3)
+      sass (>= 3.4.19)
     builder (3.2.3)
     byebug (9.0.6)
     coderay (1.1.1)
@@ -182,10 +193,12 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt!
+  bootstrap (~> 4.0.0.alpha6)
   byebug
   coffee-rails (~> 4.2)
   devise (~> 4.3)
   friendly_id (~> 5.2, >= 5.2.1)
+  gaurav_footer_creater!
   jbuilder (~> 2.5)
   jquery-rails
   pry-byebug (~> 3.4, >= 3.4.2)

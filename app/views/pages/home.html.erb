@@ -1,8 +1,14 @@
-<h1>Hi, <%= current_user.first_name %> </h1>
-<h1>HomePage</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
-<br>
-<%= @posts.inspect %>
-<br>
-<%= @skills.inspect %>
+
+  <div class="inner cover">
+    <h1 class="cover-heading">Welcome !!!</h1>
+    <p class="lead">
+      Hello Everybody. This is an app that I bult to isplay my portolio as well as resume to you guys
+       using a Ruby on Rails. I have been into RoR for about an year now and love to explore new things
+       about it everyday or the other. Do check out my portfolio.
+    </p>
+    <p class="lead">
+      <%= link_to "About Me", about_path, class: "btn btn-lg btn-secondary" %>
+      <!-- <a href="#" class="btn btn-lg btn-secondary">Learn more</a> -->
+    </p>
+  </div>

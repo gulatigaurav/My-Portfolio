@@ -1,12 +1,12 @@
 module ApplicationHelper
-   def login_helper
+   def login_helper style_class = ''
     #  " <p> My Helper </p>".html_safe
     if current_user.is_a?(GuestUser)
-      (link_to 'Register', new_user_registration_path) + " ".html_safe +
-      (link_to 'Signin',new_user_session_path)
+      (link_to 'Register', new_user_registration_path,class: style_class) + " ".html_safe +
+      (link_to 'Signin',new_user_session_path,class: style_class)
     else
      link_to 'Log out', destroy_user_session_path,
-                                                 method: :delete
+                                                 method: :delete,class: style_class
                                                end
  end
  def source_helper(layout_name)

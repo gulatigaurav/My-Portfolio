@@ -3,6 +3,8 @@
   <head>
     <title> <%= @page_title %> </title>
     <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <meta name="keywords"
              content=" <%= @seo_keywords %> "/>
@@ -12,20 +14,39 @@
   </head>
 
   <body>
-   <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
 
 
 
-    <%= login_helper %>
+    <!-- navbar -->
+       <%= render 'layouts/blog_navbar' %>
+    <!-- header   -->
+       <%= render 'shared/blog_header' %>
+
+     <!-- start of container -->
+   <div class="container">
+     <div class="row">
 
 
-    <%= yield %>
+<div class="col-sm-9">
+<%= yield %>
+</div>
 
-  <%= render 'shared/navbar',location: 'bottom' %>
+    <!-- start of sidebar -->
+   <%= render 'shared/blog_sidebar' %>
+    <!-- end of sidebar -->
 
-  <%= source_helper("blog") %>
-
+    <%= source_helper("blog") %>
+          </div>
+        
+          <%= render 'shared/blog_footer_navbar' %>
+        </div>
+      </div>
+    </div>
+  </div>
 
   </body>
 </html>

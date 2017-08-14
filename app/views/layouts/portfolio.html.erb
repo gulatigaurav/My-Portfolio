@@ -3,7 +3,8 @@
   <head>
     <title> <%= @page_title %> </title>
     <%= csrf_meta_tags %>
-
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="keywords"
              content=" <%= @seo_keywords %> "/>
 
@@ -12,19 +13,47 @@
   </head>
 
   <body>
-   <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
+  <!-- start of navbar -->
+<%= render 'shared/portfolio_navbar.html.erb'  %>
+  <!-- end of navbar  -->
+
+  <!-- start of jumbotron -->
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Gaurav's Portfolio</h1>
+      <p class="lead text-muted">A brief display of all my projects.</p>
+      <p>
+          <%= link_to "Collaborate with me", contact_path, class: "btn btn-outline-primary btn-lg" %>      
+      </p>
+    </div>
+  </section>
+
+  <!-- end of jumbotron -->
+
+  <!-- start of album body -->
 
 
 
-    <%= login_helper %>
-
+  <!-- end of album body -->
 
     <%= yield %>
 
-  <%= render 'shared/navbar', location: 'top' %>
 
   <%= source_helper("application") %>
+
+<!-- start of footer -->
+  <footer class="text-muted">
+        <div class="container">
+          <p class="float-right">
+            <a href="#">Back to top</a>
+          </p>
+          <p> <%= set_copyright %></p>
+        </div>
+      </footer>
+<!-- end of footer -->
+
 
 
   </body>

@@ -1,0 +1,48 @@
+<div class="collapse bg-inverse" id="navbarHeader">
+   <div class="container">
+     <div class="row">
+       <div class="col-sm-8 py-4">
+         <h4 class="text-white">About</h4>
+         <p class="text-muted"> A output-driven, consumer-requirment based Computer Science Engineering student who can be
+innovative and traditional at the same time. Strong in design and integration problem-solving skills with
+able to work in a team and adjust in different work situtaions . Knowledge in Java, C, SQL with
+database analysis and design and Ruby on Rails ,an emerging web development platform.  </p>
+       </div>
+       <div class="col-sm-4 py-4">
+         <h4 class="text-white">More</h4>
+
+         <ul class="list-unstyled">
+            <li> <%= link_to 'Home', root_path,class: "nav-link text-white" %>
+            <li>  <%= link_to 'About', about_path,class: "nav-link text-white" %>
+            <li>  <%= link_to 'Contact', contact_path,class: "nav-link text-white" %>
+            <li>  <%= link_to 'Blog', blogs_path,class: "nav-link text-white" %>
+            <li><%= link_to 'Portfolio', portfolios_path,class: "nav-link text-white" %>
+            <li><%= login_helper 'nav-link text-white'  %> </li>
+
+
+
+
+         </ul>
+       </div>
+
+ <!-- <div>
+   <%= link_to 'Home', root_path,class: "nav-link" %>
+   <%= link_to 'About', about_path,class: "nav-link" %>
+   <%= link_to 'Contact', contact_path,class: "nav-link" %>
+   <%= link_to 'Blog', blogs_path,class: "nav-link" %>
+   <%= link_to 'Portfolio', portfolios_path,class: "nav-link" %>
+   <%= login_helper 'nav-link'  %>
+ </div>
+  -->
+     </div>
+   </div>
+ </div>
+
+ <div class="navbar navbar-inverse bg-inverse">
+      <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand">Gaurav Gulati</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>

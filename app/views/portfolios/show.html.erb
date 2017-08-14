@@ -1,10 +1,20 @@
-<p> <%= image_tag @item.main_image if @item.main_image%></p>
-<h1> <%=  @item.title %> </h1>
-<h3><%=  @item.subtitle %></h3>
-<p> <%=  @item.body %> </p>
+ <div class="container portfolio-form">
+<div class="row">
+<div class="col-md-7">
+  <p> <%= image_tag @item.main_image if @item.main_image%></p>
+</div>
+<div class="col-md-5">
+  <h1> <%=  @item.title %> </h1>
+                <hr>
+  <h3><%=  @item.subtitle %></h3>
+  <p> <%=  @item.body %> </p>
 
-<h2> Technologies used </h2>
-<% @item.technologies.each do |t| %>
-   <p> <%= t.name %> </p>
-<% end %>
-<%= link_to "Back", portfolios_path %>
+  <h2> Technologies used </h2>
+  <% @item.technologies.each do |t| %>
+     <p> <%= t.name %> </p>
+  <% end %>
+  <%= link_to "Back", portfolios_path %>
+
+   </div>
+  </div>
+</div>

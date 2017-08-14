@@ -19,17 +19,17 @@
   <!-- end of navbar  -->
 
   <!-- start of jumbotron -->
-
+ <% if !logged_in?(:site_admin) %>
   <section class="jumbotron text-center">
     <div class="container">
       <h1 class="jumbotron-heading">Gaurav's Portfolio</h1>
       <p class="lead text-muted">A brief display of all my projects.</p>
       <p>
-          <%= link_to "Collaborate with me", contact_path, class: "btn btn-outline-primary btn-lg" %>      
+          <%= link_to "Collaborate with me", contact_path, class: "btn btn-outline-primary btn-lg" %>
       </p>
     </div>
   </section>
-
+<% end %>
   <!-- end of jumbotron -->
 
   <!-- start of album body -->
@@ -47,9 +47,11 @@
   <footer class="text-muted">
         <div class="container">
           <p class="float-right">
+            <%= link_to "Back to Portfolios page", portfolios_path %> |
             <a href="#">Back to top</a>
           </p>
-          <p> <%= set_copyright %></p>
+          <p> <%= set_copyright %>
+          </p>
         </div>
       </footer>
 <!-- end of footer -->

@@ -57,3 +57,4 @@ gem 'gaurav_footer_creater', git:'https://github.com/gulatigaurav/Footer_Creater
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'kaminari', '~> 1.0', '>= 1.0.1'
 gem 'certified', '~> 1.0'
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'

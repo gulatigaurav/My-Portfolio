@@ -54,6 +54,15 @@ class PortfoliosController < ApplicationController
      end
    end
 
+  def sort
+    params[:order].each do | key, value |  # grab the params
+    Portfolio.find(value[:id]).update(position: value[:position])
+# basically we are updating the position as in case of terminal
+    end
+    render nothing: true
+  end
+
+
     private
 
     def portfolio_params

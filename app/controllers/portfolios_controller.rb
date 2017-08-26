@@ -1,10 +1,10 @@
 class PortfoliosController < ApplicationController
   layout "portfolio"
   before_action :set_portfolio_item, only: [:edit, :update, :show , :destroy]
-  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
 
    def index
-    @items = Portfolio.all
+    @items = Portfolio.order_by_position
    end
 
    def angular
@@ -53,6 +53,15 @@ class PortfoliosController < ApplicationController
          flash[:notice] = "Please retry..."
      end
    end
+
+  def sort
+    params[:order].each do | key, value |  # grab the params
+    Portfolio.find(value[:id]).update(position: value[:position])
+# basically we are updating the position as in case of terminal
+    end
+    render nothing: true
+  end
+
 
     private
 

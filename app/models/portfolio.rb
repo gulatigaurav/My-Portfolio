@@ -7,7 +7,13 @@ class Portfolio < ApplicationRecord
   def self.angular
   where(subtitle: "Angular")
   end
-  scope :ruby_on_rails, -> {where(subtitle: "Ruby on Rails")}
+    scope :ruby_on_rails, -> {where(subtitle: "Ruby on Rails")}
+
+  def self.order_by_position
+    order("position ASC")
+  end
+
+
 
   after_initialize :set_defaults
  # all your model logic in model file

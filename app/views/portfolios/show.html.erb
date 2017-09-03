@@ -14,7 +14,11 @@
      <p> <%= t.name %> </p>
   <% end %>
   <%= link_to "Back", portfolios_path %>
-
+  <% if logged_in?(:site_admin) %>
+     <br>
+     <%= link_to "Edit Item", edit_portfolio_path(@item), class: "btn btn-warning" %>
+     <%= link_to "Delete Item", portfolio_path(@item), method: :delete, class: "btn btn-danger" %>
+  <% end %>
    </div>
   </div>
 </div>

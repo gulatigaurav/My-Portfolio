@@ -6,8 +6,8 @@ module SocialTool
       config.access_token        = ENV.fetch("TWITTER_ACCESS_TOKEN")
       config.access_token_secret = ENV.fetch("TWITTER_ACCESS_TOKEN_SECRET")
     end
-
-    client.search("#tech", result_type: "recent").take(5).collect do |tweet|
+# change here for differnet tech pieces
+    client.search("#RubyonRails", result_type: "recent").take(5).collect do |tweet|
       "#{tweet.user.screen_name}: #{tweet.text}"
     end
 

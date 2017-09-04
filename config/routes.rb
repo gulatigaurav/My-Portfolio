@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/about', to: 'pages#about'
   get '/contact',to: 'pages#contact'
+  get '/RoR',to: 'pages#ROR_news'
   get 'portfolios/angular'
   resources :blogs do
     member do

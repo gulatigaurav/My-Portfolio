@@ -1,0 +1,9 @@
+<h1 class="text-center">
+  LAST 5 TWEETS
+</h1>
+<% @tweets.each do |tweet| %>
+  <div class="well">
+    <%= twitter_parser tweet %>
+  </div>
+   <br>
+<% end %>

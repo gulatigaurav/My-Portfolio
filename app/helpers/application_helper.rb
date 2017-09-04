@@ -9,6 +9,7 @@ module ApplicationHelper
                                                  method: :delete,class: style_class
                                                end
  end
+
  def source_helper(layout_name)
    if session[:source]
      content_tag(:p,"Thanks for visiting us from #{session[:source]}",class: "source-greeting")
@@ -40,8 +41,11 @@ def nav_items
    {
      url: portfolios_path,
      title: 'Portfolio'
+   },
+   {
+     url: rails_tweets_path,
+     title: 'Rails-Tweets'
    }
-
  ]
 end
 

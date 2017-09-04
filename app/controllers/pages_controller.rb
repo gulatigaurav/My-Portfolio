@@ -10,7 +10,7 @@ class PagesController < ApplicationController
   def contact
   end
 
-  def ROR_news
+  def rails_news
     @tweets = SocialTool.twitter_search
   end
 

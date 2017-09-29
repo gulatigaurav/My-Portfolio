@@ -8,7 +8,7 @@ class BlogsController < ApplicationController
   def index
     @page_title = "GG | Blogs"
     @blogs = Blog.page(params[:page]).per(5)
-
+    @news = NewsTool.news_search
   end
 
   # GET /blogs/1

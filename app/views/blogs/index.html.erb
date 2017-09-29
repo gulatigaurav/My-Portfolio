@@ -1,9 +1,12 @@
 <div class="col-sm-8 blog-main">
-  <%= paginate @blogs %>
+  <!-- <%= paginate @blogs %> -->
+    <% @news.each do |new_item| %>
+    <%= p news_parser new_item %>
+    <br><hr>
+  <% end %>
 
-         <%= render @blogs %>
 
-   <%= paginate @blogs %>
+   <!-- <%= paginate @blogs %> -->
 
 
-     </div><!-- /.blog-main -->
+     </div>

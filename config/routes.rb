@@ -9,10 +9,12 @@ Rails.application.routes.draw do
   get '/contact',to: 'pages#contact'
   get '/rails_tweets',to: 'pages#rails_news'
   get 'portfolios/angular'
-  resources :blogs do
-    member do
-       get :toggle_status
-     end
-  end
+  # resources :blogs do
+  #   member do
+  #      get :toggle_status
+  #    end
+  # end
+  resources :blogs, only: [:index]
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

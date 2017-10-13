@@ -7,74 +7,79 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     @page_title = "GG | Blogs"
-    @blogs = Blog.page(params[:page]).per(5)
+    if logged_in?(:site_admin)
+      @blogs = Blog.recent.page(params[:page]).per(5)
+    else
+      @blogs = Blog.published.recent.page(params[:page]).per(5)
+    end
     @news = NewsTool.news_search
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
-  def show
-    @page_title = @blog.title
-  end
+  # def show
+  #   @page_title = @blog.title
+  # end
 
   # GET /blogs/new
-  def new
-    @blog = Blog.new
-  end
+  # def new
+  #   @blog = Blog.new
+  # end
 
   # GET /blogs/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /blogs
   # POST /blogs.json
-  def create
-    @blog = Blog.new(blog_params)
-
-    respond_to do |format|
-      if @blog.save
-        format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
-        format.json { render :show, status: :created, location: @blog }
-      else
-        format.html { render :new }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def create
+  #   @blog = Blog.new(blog_params)
+  #
+  #   respond_to do |format|
+  #     if @blog.save
+  #       format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
+  #       format.json { render :show, status: :created, location: @blog }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @blog.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
-  def update
-    respond_to do |format|
-      if @blog.update(blog_params)
-        format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
-        format.json { render :show, status: :ok, location: @blog }
-      else
-        format.html { render :edit }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+
+  # def update
+  #   respond_to do |format|
+  #     if @blog.update(blog_params)
+  #       format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @blog }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @blog.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /blogs/1
   # DELETE /blogs/1.json
-  def destroy
-    @blog.destroy
-    respond_to do |format|
-      format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  # def destroy
+  #   @blog.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
-  def toggle_status
-     if @blog.draft?
-       @blog.published!
-     elsif @blog.published?
-       @blog.draft!
-     end
-
-    redirect_to blogs_url, notice: 'Post status has been updated'
-   end
+  # def toggle_status
+  #    if @blog.draft?
+  #      @blog.published!
+  #    elsif @blog.published?
+  #      @blog.draft!
+  #    end
+  #
+  #   redirect_to blogs_url, notice: 'Post status has been updated'
+  #  end
 
 
   private

@@ -41,3 +41,5 @@ gem 'gritter', '~> 1.2'
 gem 'twitter', '~> 6.1'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'httparty', '~> 0.15.6'
+
+ruby "2.4.2"
